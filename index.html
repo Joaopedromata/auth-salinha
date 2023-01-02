@@ -20,19 +20,36 @@
         <h5 class="title">Entre com sua conta</h5>
       </header>
 
-      <form class="form">
-        <input class="input" placeholder="E-mail" type="email" />
-        <input class="input" placeholder="Senha" type="password" />
-        <button class="button" onclick="soma(50931029308120983098)">
-          Continue
-        </button>
+      <form class="form" id="login">
+        <input class="input" placeholder="E-mail" type="email" id="email" />
+        <input class="input" placeholder="Senha" type="password" id="senha" />
+        <button class="button" type="submit">Continue</button>
       </form>
     </main>
   </body>
 
   <script>
-    function soma(numero) {
-      window.alert(numero);
-    }
+    // obter formulário
+    var formulario = document.getElementById('login')
+
+
+    formulario.addEventListener('submit', function (event) {
+      // Previne o envio padrão do formulário
+      event.preventDefault()
+
+      // busca input pelo id
+      var inputSenha = document.getElementById("senha");
+      var inputEmail = document.getElementById("email");
+
+      // pega o valor digitado no input
+      var inputSenhaValor = inputSenha.value;
+      var inputEmailValor = inputEmail.value;
+
+
+      // monta um alerta
+      alert("sua senha é " + inputSenhaValor + " e " + "seu email é " + inputEmailValor);
+    })
+
+
   </script>
 </html>
